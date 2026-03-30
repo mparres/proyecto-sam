@@ -1,13 +1,13 @@
 #!/usr/bin/env nextflow
 
 /*
- * Parámetro de entrada: ruta al fichero SAM
+ * Parameter: path to SAM file
  */
 
 params.sam = "$HOME/dia9/nf/2-Align/WT.sam"
 
 /*
- * Proceso que ejecuta el script Python
+ * Process
  */
 
 process analyze_sam {
@@ -26,7 +26,7 @@ process analyze_sam {
 }
 
 /*
- * Workflow principal
+ * Main workflow
  */
 
 workflow {
