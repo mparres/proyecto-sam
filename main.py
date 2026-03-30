@@ -22,27 +22,27 @@ mapq60_reads = 0
 #Open file and read line by line
 with open(sam_file) as f:
 
-    for linea in f:
-        linea = linea.strip()
+    for line in f:
+        line = line.strip()
 
         #Skip header lines (start with @)
-        if not linea.startswith('@'):
+        if not line.startswith('@'):
  
-            columnas = linea.split('\t')
+            columns = line.split('\t')
  
-            mapq = int(columnas[4])
+            mapq = int(columns[4])
  
             total_reads += 1
  
             if mapq ==60:
                 mapq60_reads += 1
 
-porcentaje = mapq60_reads / total_reads * 100
+percentage = mapq60_reads / total_reads * 100
 
 #Display results using rich
 console = Console ()
-console.print ("[bold]Total de lecturas alineadas:[/bold]", total_reads)
-console.print ("[bold green]Lecturas con MAPQ = 60:[/bold green]", mapq60_reads)
-console.print ("[bold blue]Porcentaje:[/bold blue]", round(porcentaje, 1), "%")
+console.print ("[bold]Total aligned reads:[/bold]", total_reads)
+console.print ("[bold green]Reads with MAPQ = 60:[/bold green]", mapq60_reads)
+console.print ("[bold blue]Percentage:[/bold blue]", round(porcentaje, 1), "%")
 
 
