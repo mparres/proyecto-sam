@@ -14,6 +14,7 @@ from rich.console import Console
 
 #define path to SAM
 sam_file = sys.argv[1]
+print("Analyzing file:", sam_file)
 
 #Counters
 total_reads = 0
@@ -43,6 +44,6 @@ percentage = mapq60_reads / total_reads * 100
 console = Console ()
 console.print ("[bold]Total aligned reads:[/bold]", total_reads)
 console.print ("[bold green]Reads with MAPQ = 60:[/bold green]", mapq60_reads)
-console.print ("[bold blue]Percentage:[/bold blue]", round(porcentaje, 1), "%")
+console.print ("[bold blue]Percentage:[/bold blue]", round(percentage, 1), "%")
 
 
